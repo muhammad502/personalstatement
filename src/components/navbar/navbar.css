@@ -1,0 +1,148 @@
+/* Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    opacity: 0.9;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+   
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+    border: 1px solid white;
+    padding: 10px 15px; 
+    border-radius: 10px;
+  
+}
+
+.nav-links li a:hover {
+    color: white;
+    background-color: rgb(141, 138, 136);
+}
+
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+.logo {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    font-size: 20px; /* Large font size for visibility */
+    color: #ffffff; /* Text color */
+    text-transform: uppercase; /* Uppercase for style */
+    position: relative; /* Position for pseudo-elements */
+    cursor: pointer;
+  }
+  
+  .first-name {
+    background: linear-gradient(90deg, #007BFF, #00CFFF); /* Gradient background */
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+  }
+  
+  .last-name {
+    background: linear-gradient(90deg, #FF4757, #FF6B81); /* Different gradient */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Adding shadows for depth */
+  .logo::before {
+    content: '';
+    position: absolute; /* Position relative to the logo */
+    background: rgba(0, 0, 0, 0.2); /* Shadow effect */
+    top: 5px; /* Offset */
+    left: 5px; /* Offset */
+    border-radius: 10px; /* Rounded corners */
+    z-index: -1; /* Send shadow behind text */
+    filter: blur(10px); /* Soft blur for depth */
+  }
+  span{
+    padding: 5px;
+  }
+
+  
